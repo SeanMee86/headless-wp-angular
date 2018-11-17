@@ -7,7 +7,6 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  projects = [];
   htmlBody: string;
   title: string;
   image: string;
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
             this.title = data[key].title.rendered;
             this.image = data[key].better_featured_image;
           }
-          this.projects.push((data[key]));
         }
       }
     });
