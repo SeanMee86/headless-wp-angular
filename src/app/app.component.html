@@ -1,15 +1,12 @@
-<app-header [projectList]="projects"></app-header>
+<app-header [projectList]="projects" (sendPageContent)="getPageContent($event)"></app-header>
+<!--<img *ngIf="image" [src]="image.source_url" width="100%">-->
+<div class="page-header" [ngStyle]="image ? {backgroundImage: 'url('+image.source_url+')'} : {backgroundImage: 'url(http://localhost/wp-content/uploads/2018/11/page-header.jpg)'}"></div>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <ul>
-                <li *ngFor="let project of projects" style="list-style: none;">
-                    <h1 [innerHtml]="project.title.rendered"></h1>
-                    <img *ngIf="project.better_featured_image !== null" [src]='project.better_featured_image.source_url' [alt]='' style="max-height: 100px; display: block;">
-                    <br>
-                    <div [innerHtml]="project.content.rendered"></div>
-                </li>
-            </ul>
+            <h1 [innerHtml]="title"></h1>
+            <br>
+            <div [innerHtml]="htmlBody"></div>
         </div>
     </div>
 </div>
