@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   htmlBody: string;
   title: string;
   image: string;
+  menus = [];
 
   constructor(private http: HttpClient) {}
 
@@ -22,6 +23,13 @@ export class AppComponent implements OnInit {
             this.title = data[key].title.rendered;
             this.image = data[key].better_featured_image;
           }
+        }
+      }
+    });
+    this.http.get('http://localhost/wp-json/myroutes/menu').subscribe((data) => {
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          this.menus.push((data[key]));
         }
       }
     });

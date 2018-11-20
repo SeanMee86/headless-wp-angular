@@ -5,8 +5,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item" *ngFor="let project of projects; let i = index" id="project.object_id" (click)="onNavClick(project.object_id)">
-                <a class="nav-link" href='#' [innerHtml]="project.title"></a>
+            <li class="nav-item" *ngFor="let listItem of menuList; let i = index" id="listItem.object_id" (click)="onNavClick(listItem.object_id)">
+                <a class="nav-link" href='#' [innerHtml]="listItem.title"></a>
             </li>
         </ul>
     </div>

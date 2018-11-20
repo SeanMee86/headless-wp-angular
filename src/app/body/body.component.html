@@ -1,0 +1,10 @@
+<div class="page-header" [ngStyle]="image ? {backgroundImage: 'url('+image.source_url+')'} : {backgroundImage: 'url(http://localhost/wp-content/uploads/2018/11/page-header.jpg)'}"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 [innerHtml]="title"></h1>
+      <br>
+      <div [innerHtml]="htmlBody"></div>
+    </div>
+  </div>
+</div>
